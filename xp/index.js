@@ -1,3 +1,9 @@
+/**
+ * `XP()` component for Kaboom.js to XP and level up
+ *
+ * @author Luiz Bills
+ * @version 0.1
+ */
 export default function componentXP(k) {
     function XP(currentLevel = 1, opts = {}) {
         // XP required to level up
