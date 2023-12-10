@@ -13,6 +13,10 @@ const hp = add([
         bgColor: rgb('181425'),
         animColor: rgb('e43b44'),
         borderRadius: 0,
+        // other options
+        // height: default is (this.width / 8)
+        // animate: default is true
+        // borderWidth: default is (this.height / 4)
     }),
 ])
 
