@@ -9,13 +9,13 @@
 export default function componentStayOnScreen(k) {
     const stayOnScreen = () => {
         return {
-            id: "stayOnScreen",
-            require: ["pos"],
+            id: 'stayOnScreen',
+            require: ['pos'],
             update() {
-                this.pos.x = k.clamp(this.pos.x, 0, k.width() - ~~this.width);
-                this.pos.y = k.clamp(this.pos.y, 0, k.height() - ~~this.height);
+                this.pos.x = k.clamp(this.pos.x, 0, k.width() - ~~this.width)
+                this.pos.y = k.clamp(this.pos.y, 0, k.height() - ~~this.height)
             },
-        };
-    };
-    return { stayOnScreen };
+        }
+    }
+    return { stayOnScreen }
 }

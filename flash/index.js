@@ -6,36 +6,36 @@
  */
 export default function componentFlash(k) {
     const flash = (interval = 0.15) => {
-        let _loop = null;
+        let _loop = null
 
         return {
-            id: "flash",
+            id: 'flash',
 
             get isFlashing() {
-                return _loop !== null;
+                return _loop !== null
             },
 
             flash(duration = Infinity) {
-                if (_loop) this.cancelFlash(false);
+                if (_loop) this.cancelFlash(false)
 
-                const end = time() + duration;
+                const end = time() + duration
 
-                this.trigger('flashStart');
+                this.trigger('flashStart')
 
                 _loop = k.loop(interval, () => {
-                    if (time() >= end) return this.cancelFlash();
-                    this.hidden = !this.hidden;
+                    if (time() >= end) return this.cancelFlash()
+                    this.hidden = !this.hidden
                 })
             },
 
             cancelFlash(triggerEvent = true) {
-                if (!_loop) return;
-                _loop.cancel();
-                _loop = null;
-                this.hidden = false;
-                if (triggerEvent) this.trigger('flashEnd');
-            }
+                if (!_loop) return
+                _loop.cancel()
+                _loop = null
+                this.hidden = false
+                if (triggerEvent) this.trigger('flashEnd')
+            },
         }
     }
-    return { flash };
+    return { flash }
 }
